@@ -1,5 +1,4 @@
-"""
-Write a program with UDF to print the number
+""" Write a program with UDF to print the number
 after increasing it to the power 
 accepted from the user. 
 """
