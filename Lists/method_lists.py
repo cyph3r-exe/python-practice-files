@@ -24,3 +24,9 @@ print(check_numbers)
 #sort in reverse 
 check_numbers.sort(reverse=True)
 print(check_numbers)
+
+#Using copy to create a copy of our 
+#first list 
+a = check_numbers.copy()
+print(check_numbers)  
+print(a)
