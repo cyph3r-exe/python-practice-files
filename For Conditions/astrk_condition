@@ -11,7 +11,7 @@ Write a program to print the following number pattern using a loop.
 print("Number Pattern ")
 #Declaring a variable 
 row = 5
-
+    
 #initiating the loop
 for i in range(1, row + 1, 1):
     # Run inner loop i+1 times
