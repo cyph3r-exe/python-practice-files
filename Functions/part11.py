@@ -62,9 +62,20 @@ def rectangle():
             print("Please try again")
 
 def triangle():
-    tr_base = int(input("Enter the value of the base of the triangle: "))
-    tr_side1 = int(input("Enter the value of one side of the triangle: "))
-    tr_side2 = int(input("Enter the value of the other side of the triangle: "))
+    while tr_choice < 5:
+        tr_base_a = int(input("Enter the value of the base of the triangle: "))
+        tr_side1_b = int(input("Enter the value of one side of the triangle: "))
+        tr_side2_c = int(input("Enter the value of the other side of the triangle: "))
+        if tr_base_a + tr_side1_b > tr_side2_c:
+            if tr_side2_c + tr_side1_b > tr_base_a:
+                if tr_base_a + tr_side2_c > tr_side1_b:
+                    tr_choice = int(input("""Here is your menu. Type the number
+                    associated with the kind of value you want to see.
+                    1 -> Perimeter
+                    2 -> Area 
+                    3 -> Volume 
+                    4 -> Surface Area: """))
+                    
 
 while main_choice < 6:
         main_choice = int(input("""
