@@ -11,27 +11,28 @@ use the appropriate functions.
 
 def square():
     side = int(input("Enter the value of the side of the square. (in cms): "))
-    sq_choice = int(input("""Here is your menu. Type the number
-    associated with the kind of value you want to see.
-    1 -> Perimeter
-    2 -> Area 
-    3 -> Volume 
-    4 -> Surface Area """))
+    while sq_choice < 5:
+        sq_choice = int(input("""Here is your menu. Type the number
+        associated with the kind of value you want to see.
+        1 -> Perimeter
+        2 -> Area 
+        3 -> Volume 
+        4 -> Surface Area """))
 
-    if sq_choice == 1:
-        a = 4 * side
-        print(f"The perimeter is of value {a} cms")
-    elif sq_choice == 2:
-        b = side * side
-        print(f"The area is of value {b} cms^2")
-    elif sq_choice == 3:
-        c = side*side*side
-        print(f"The volume is of value {c} cms^3")
-    elif sq_choice == 4:
-        d = 6*side*side
-        print(f"The surface area is of value {d}")
-    else:
-        print("Please re-run the program.")
+        if sq_choice == 1:
+            a = 4 * side
+            print(f"The perimeter is of value {a} cms")
+        elif sq_choice == 2:
+            b = side * side
+            print(f"The area is of value {b} cms^2")
+        elif sq_choice == 3:
+            c = side*side*side
+            print(f"The volume is of value {c} cms^3")
+        elif sq_choice == 4:
+            d = 6*side*side
+            print(f"The surface area is of value {d}")
+        else:
+            print("Please re-run the program.")
 
 def rectangle():
     while rec_choice < 5:
@@ -61,7 +62,11 @@ def rectangle():
             print("Please try again")
 
 def triangle():
-    while main_choice < 6:
+    tr_base = int(input("Enter the value of the base of the triangle: "))
+    tr_side1 = int(input("Enter the value of one side of the triangle: "))
+    tr_side2 = int(input("Enter the value of the other side of the triangle: "))
+
+while main_choice < 6:
         main_choice = int(input("""
         Welcome.... 
         This is a menu driven program to help you 
