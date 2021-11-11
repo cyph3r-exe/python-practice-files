@@ -60,20 +60,21 @@ def rectangle():
         else:
             print("Please try again")
 
-while main_choice < 6:
-    main_choice = int(input("""
-    Welcome.... 
-    This is a menu driven program to help you 
-    calculate stuff about shapes. 
-    Please choose the number associated with the 
-    values of the shape you want to see. 
-    1 -> Square
-    2 -> Rectangle
-    3 -> Triangle
-    4 -> Circle
-    5 -> Cylinder
-    Enter number here: """))
-    if main_choice == 1:
-        square()
-    elif main_choice == 2:
-        rectangle()
+def triangle():
+    while main_choice < 6:
+        main_choice = int(input("""
+        Welcome.... 
+        This is a menu driven program to help you 
+        calculate stuff about shapes. 
+        Please choose the number associated with the 
+        values of the shape you want to see. 
+        1 -> Square
+        2 -> Rectangle
+        3 -> Triangle
+        4 -> Circle
+        5 -> Cylinder
+        Enter number here: """))
+        if main_choice == 1:
+            square()
+        elif main_choice == 2:
+            rectangle()
