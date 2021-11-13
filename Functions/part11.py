@@ -9,6 +9,7 @@ value should be returned. Import the module and
 use the appropriate functions.
 """
 import math as mt
+import os
 
 def square():
     side = int(input("Enter the value of the side of the square. (in cms): "))
@@ -115,7 +116,22 @@ def circle():
             print(f"The surface area of your circle is {cs_surArea}")
         else:
             print("Please try again")
-    
+
+def cylinder():
+    while cy_choice < 5:
+        cy_radius = int(input("Enter the radius of your cylinder: "))
+        cy_height = int(input("Enter height of your cylinder: "))
+        cy_choice = int(input("""Here is your menu. Type the number
+                    associated with the kind of value you want to see. 
+                    1 -> Volume 
+                    2 -> Surface Area: """))
+        if cy_choice == 1:
+            cy_volume = 3.14 * (cy_radius * cy_radius) * cy_height
+            print(f"The volume of the sphere is {cy_volume}")
+        elif cy_choice == 2:
+            cy_surArea = 2 * 3.14 * cy_radius * cy_height * (cy_radius + cy_height)
+            print(f"The surface area of your cylinder is {cy_surArea}")
+        
 while main_choice < 6:
         main_choice = int(input("""
         Welcome.... 
@@ -133,3 +149,17 @@ while main_choice < 6:
             square()
         elif main_choice == 2:
             rectangle()
+        elif main_choice == 3:
+            triangle()
+        elif main_choice == 4:
+            circle()
+        elif main_choice == 5:
+            cylinder()
+        else:
+            x = int(input("""Whould you like ot continue? 
+            If yes press 1
+            if no, press 2: """))
+            if x == 1:
+                continue
+            elif x == 2:
+                os.exit
