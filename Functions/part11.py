@@ -95,15 +95,27 @@ def triangle():
 def circle():
     while cs_choice < 5:
         cs_radius = int(input("Enter the radius of your circle: "))
-        cs_choice = int(input("""
-        
-        
-        
-        
-        
-        
-        """))
-
+        cs_choice = int(input("""Here is your menu. Type the number
+                    associated with the kind of value you want to see.
+                    1 -> Perimeter
+                    2 -> Area 
+                    3 -> Volume 
+                    4 -> Surface Area: """))
+        if cs_choice == 1:
+            cs_perim = 2 * 3.14 * cs_radius
+            print(f"The perimeter of your circle is {cs_perim}")
+        elif cs_choice == 2:
+            cs_area = 2 * 3.14 * (cs_radius * cs_radius)
+            print(f"The area of your circle is {cs_area}")
+        elif cs_choice == 3:
+            cs_volume = 4/3(3.14 (cs_radius * cs_radius * cs_radius))
+            print(f"The volume of your circle is {cs_volume}")
+        elif cs_choice == 4:
+            cs_surArea = 4/3(3.14 (cs_radius * cs_radius))
+            print(f"The surface area of your circle is {cs_surArea}")
+        else:
+            print("Please try again")
+    
 while main_choice < 6:
         main_choice = int(input("""
         Welcome.... 
