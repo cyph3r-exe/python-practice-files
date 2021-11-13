@@ -8,6 +8,7 @@ for calculation as parameters and the calculated
 value should be returned. Import the module and 
 use the appropriate functions.
 """
+import math as mt
 
 def square():
     side = int(input("Enter the value of the side of the square. (in cms): "))
@@ -75,7 +76,33 @@ def triangle():
                     2 -> Area 
                     3 -> Volume 
                     4 -> Surface Area: """))
-                    
+                    #Using heron's formula to find the height of the triangle 
+                    #given by the user. 
+                    s = (tr_base_a + tr_side1_b + tr_side2_c) / 2
+                    tr_area = mt.sqrt(s * (s - tr_base_a) * (s - tr_side1_b) * (s - tr_side2_c))
+                    tr_height = (2 * s) / tr_base_a
+                    if tr_choice == 1:
+                        tr_perim = tr_base_a + tr_side1_b + tr_side2_c
+                        print(f"The perimeter of your triabngle is {tr_perim}")
+                    elif tr_choice == 2:
+                        print(f"The area of your triangle is {tr_area}")
+                    elif tr_choice == 3:
+                        tr_volume = (tr_base_a * tr_side1_b * tr_height) / 3
+                        print(f"The volume of your triangle is {tr_volume}")
+                    elif tr_choice == 4:
+                        print(f"the surface area of your triangle is {tr_area}")
+
+def circle():
+    while cs_choice < 5:
+        cs_radius = int(input("Enter the radius of your circle: "))
+        cs_choice = int(input("""
+        
+        
+        
+        
+        
+        
+        """))
 
 while main_choice < 6:
         main_choice = int(input("""
