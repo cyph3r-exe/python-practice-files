@@ -20,6 +20,8 @@ def square():
         2 -> Area 
         3 -> Volume 
         4 -> Surface Area """))
+        
+        #If statements to choose the result
 
         if sq_choice == 1:
             a = 4 * side
@@ -36,6 +38,8 @@ def square():
         else:
             print("Please re-run the program.")
 
+#Function of triangles
+ 
 def rectangle():
     while rec_choice < 5:
         length = int(input("Enter the length of your rectangle: "))
@@ -93,6 +97,8 @@ def triangle():
                     elif tr_choice == 4:
                         print(f"the surface area of your triangle is {tr_area}")
 
+#function to 
+
 def circle():
     while cs_choice < 5:
         cs_radius = int(input("Enter the radius of your circle: "))
@@ -131,7 +137,7 @@ def cylinder():
         elif cy_choice == 2:
             cy_surArea = 2 * 3.14 * cy_radius * cy_height * (cy_radius + cy_height)
             print(f"The surface area of your cylinder is {cy_surArea}")
-        
+            #okay 
 while main_choice < 6:
         main_choice = int(input("""
         Welcome.... 
