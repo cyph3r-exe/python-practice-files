@@ -55,3 +55,13 @@ def reverse():
 
     print("Reversed Number: " + str(reversed_num))
 
+def strspaces():
+    string = input("Enter any sentence of your choice: ")
+    numcount = 0
+    for i in string:
+        if i == ' ':
+            numcount =+ 1
+        else:
+            continue
+    print(f"Number of spaces in your string are: {numcount}")
+    
