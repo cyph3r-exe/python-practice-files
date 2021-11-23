@@ -7,17 +7,6 @@ Make the following programs using user defined functions
 (3) Count the ni of spaces in a string
 """
 
-choice_main = int(input("""
-What would you like to use in this program. 
-Please type the value associated with the 
-same. Thank you for co-operating. 
-1 -> Fibonacci till n Terms 
-2 -> Reverse of a number. 
-3 -> Number of spaces in a string. 
-
-Enter number here : 
-"""))
-
 def fibonacci():
 
     nterms = int(input("How many terms? "))
@@ -37,7 +26,7 @@ def fibonacci():
        n1 = n2
        n2 = nth
        count += 1
-       
+
 def reverse():
     num = 1234
     reversed_num = 0
@@ -59,3 +48,23 @@ def strspaces():
             continue
     print(f"Number of spaces in your string are: {numcount}")
 
+while choice_main < 4:
+    choice_main = int(input("""
+    What would you like to use in this program. 
+    Please type the value associated with the 
+    same. Thank you for co-operating. 
+    1 -> Fibonacci till n Terms 
+    2 -> Reverse of a number. 
+    3 -> Number of spaces in a string. 
+
+    Enter number here : 
+    """))
+
+    if choice_main == 1:
+        fibonacci()
+    elif choice_main == 2:
+        reverse()
+    elif choice_main == 3:
+        strspaces()
+    else: 
+        print("Please try again")
