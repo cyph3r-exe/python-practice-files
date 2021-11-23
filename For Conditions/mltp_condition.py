@@ -3,8 +3,8 @@ Make the following programs using user defined functions
 ( write down in your notebook and then try them on the system ) …
  also pass arguments and return values in at least one question 
 (1) Fibonacci series 
-(2) return reverse of a number 
-(3) count the ni of spaces in a string
+(2) Return reverse of a number 
+(3) Count the ni of spaces in a string
 """
 
 choice_main = int(input("""
@@ -43,5 +43,15 @@ def fibonacci():
        n1 = n2
        n2 = nth
        count += 1
+    
+def reverse():
+    num = 1234
+    reversed_num = 0
 
+    while num != 0:
+        digit = num % 10
+        reversed_num = reversed_num * 10 + digit
+        num //= 10
+
+    print("Reversed Number: " + str(reversed_num))
 
