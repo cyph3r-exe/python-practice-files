@@ -8,3 +8,7 @@ print(str[-1:-12:-1])
 
 #part 2 
 print(str[-12:-1])
+
+#part 3
+print(str[-10:-4:3])
+
