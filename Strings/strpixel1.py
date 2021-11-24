@@ -14,3 +14,6 @@ print(str[16:11])
 
 #part4
 print(str[16:11:-2])
+
+#part5
+print(str[::-1])
