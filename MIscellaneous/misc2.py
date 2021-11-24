@@ -6,3 +6,8 @@
  The program should continue as long as user wishes to. 
 """
 
+item = input("Enter the name of item you want to buy: ")
+price = int(input("Enter the price: "))
+category = int(input("""Enter the number of the category 
+you wish to put this in. 
+1 -> """))
