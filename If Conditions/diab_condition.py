@@ -2,8 +2,7 @@
 Python program to determine whether someone 
 has diabetes or not. 
 """
-#taking all inputs
-
+#taking inputs
 
 glucose_conc = int(input("Enter your glucose concentration: "))
 
