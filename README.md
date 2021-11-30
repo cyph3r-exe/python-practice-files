@@ -5,3 +5,4 @@ ____________________________________
 __________________
 ### Use this video as a reference from  [this timestamp](https://www.youtube.com/watch?v=_uQrJ0TkZlc&t=4577s)
 
+### For Tkinter, use this video as a reference. [Link](https://www.youtube.com/watch?v=YXPyB4XeYLA&ab_channel=freeCodeCamp.org)
