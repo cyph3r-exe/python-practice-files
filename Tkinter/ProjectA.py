@@ -19,6 +19,7 @@ def choice1():
 
     #taking initial entry from the user. 
     myEntry1 = Entry(root, text="Enter your glucose concentration: ")
+    myEntry1.pack()
 
     #making the working ML tree 
 
@@ -26,9 +27,11 @@ def choice1():
 
     if glucose_conc < 100:
         myEntry2 = Entry(root, text="Enter your BMI: ")
+        myEntry2.pack()
         bMi = myEntry2.get()
         if bMi < 30:
             myEntry3 = Entry(root, text="Enter your Age: ")
+            myEntry3.pack()
             Age = myEntry3.get()
             if Age < 31:
                 if glucose_conc < 137:
@@ -45,10 +48,12 @@ def choice1():
                         myLabel5.pack()
             else:
                 myEntry4 = Entry(root, text="EEnter your diabetes pedigree:")
+                myEntry4.pack()
                 diab_pedi = myEntry4.get() 
                 if diab_pedi <1:
                     if Age > 49:
                         myEntry5 = Entry(root, text="Enter your skin thickness: ")
+                        myEntry5.pack()
                         skin_thicc = myEntry5.get()
                         if skin_thicc > 27:
                             myLabel5 = Label(root, text="Patient is diabetic.")
@@ -70,6 +75,7 @@ def choice1():
         myLabel9.pack()
     else:
         myEntry6 = Entry(root, text="Enter the number of times admitted: ")
+        myEntry6.pack()
         no_of_times_admiited = myEntry6.get()
 
         if no_of_times_admiited > 0:
@@ -77,9 +83,11 @@ def choice1():
             myLabel9.pack()
         else:
             myEntry7 = Entry(root, text="Enter number of mLs of 2hr Serum insulin taken:")
+            myEntry7.pack()
             hr2_serum_ins = myEntry7.get()
             if hr2_serum_ins > 138:
                 myEntry2 = Entry(root, text="Enter your BMI: ")
+                myEntry2.pack()
                 bMi = myEntry2.get()
             
                 if bMi < 31:
@@ -91,6 +99,9 @@ def choice1():
             else:
                 myLabel12 = Label(root, text="Patient is not diabetic.")
                 myLabel12.pack()
+
+    #running the loop
+    root.mainloop()
 
 def choice2():
     """
