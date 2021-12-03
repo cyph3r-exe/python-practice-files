@@ -12,9 +12,10 @@ def myWriting():
     myLabel1 = Label(root, text="Here is my text")
     myLabel1.pack()
 
-#defining the buttons          
-myButton = Button(root, text="Click me", bg="#ff0000", command=myWriting)
+#defining the buttons
+#bg for background, fg for foreground.
+         
+myButton = Button(root, text="Click me", bg="#187563", fg="#39f6d0" ,command=myWriting)
 myButton.pack()
 
 root.mainloop()
-
