@@ -47,7 +47,7 @@ def choice1():
                         myLabel5 = Label(root, text="Patient is not diabetic.")
                         myLabel5.pack()
             else:
-                myEntry4 = Entry(root, text="EEnter your diabetes pedigree:")
+                myEntry4 = Entry(root, text="Enter your diabetes pedigree:")
                 myEntry4.pack()
                 diab_pedi = myEntry4.get() 
                 if diab_pedi <1:
