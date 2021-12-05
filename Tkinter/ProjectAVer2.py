@@ -58,13 +58,24 @@ diab_pediLabel.grid(row=4, column=0)
 diab_pediEntry.grid(row=4, column=1)
 
 #TODO: Skin Thickness
-
+skinLabel = Label(root, text="Enter your skin thickness: ")
+skinEntry = Entry(root, text="Enter your skin thickness: ")
+skin_thicc = skinEntry.get()
 
 """TODO: Number of times admitted to the hospital for sugar
 related cases.
 """
+hospitalLabel = Label(root, text="""Enter the number of times admitted in the
+                                    hospital for diabetese related issues """)
+
+hospitalEntry = Entry(root, text=root, text="""Enter the number of times admitted in the
+                                    hospital for diabetese related issues """)
+
 
 #TODO NUmber of doses for 2hr Serum insulin taken.
+
+#? The button should have some texture
+ 
 
 #running the loop
 root.mainloop()
