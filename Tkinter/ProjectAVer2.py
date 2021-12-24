@@ -140,7 +140,6 @@ def machinebackend():
                 finalLabel1 = Label(root, text="The patient is not diabetic")
                 finalLabel1.grid(row=9, column=0)
 
-
 #? The button should have some texture
 employedButton = Button(root, text="Press to calculate", command=machinebackend)
 employedButton.grid(row=7, column=0)
