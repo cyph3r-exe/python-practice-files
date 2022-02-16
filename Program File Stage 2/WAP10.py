@@ -7,10 +7,10 @@
  
 class Product:
     def GetProduct(self):
-        self.__id = input("Enter book Id(First two digits of name) : ")
-        self.__name = input("Enter book Name : ")
+        self.book_id = input("Enter book ID: ")
+        self.name_of_book = input("Enter Name : ")
         global price_of_books
-        price_of_books = int(input("Enter book price_of_books : "))
+        price_of_books = int(input("Enter book Price of books : "))
         disc=0
         if price_of_books >=500:
             disc=100
@@ -18,16 +18,16 @@ class Product:
             disc=0
 
     def PutProduct(self):
-        print('ID:',self.__id,'NAME:', self.__name,'COST:', price_of_books,)
+        print('ID:',self.book_id,'NAME:', self.name_of_book,'COST:', price_of_books,)
 
     def SearchById(self, id):
-        if self.__id == id:
+        if self.book_id == id:
             return True
         else:
             return False
 
     def SearchByName(self, name):
-        if self.__name == name:
+        if self.name_of_book == name:
             return True
         else:
             return False
