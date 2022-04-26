@@ -26,6 +26,7 @@ def displayData():
                         break
     except:
         print("End of file")
+    F.close()
 
 #menu 
 ch = "Y"
