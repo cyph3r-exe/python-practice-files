@@ -1,6 +1,3 @@
-from asyncore import read
-
-
 def writingInputOnce():
     F1 = open("Hello.text", 'w')
     a = input("Enter a string: ")
