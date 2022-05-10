@@ -10,10 +10,8 @@
 #Date of testing str 2
 #rtpcr result str 3
 
-from hashlib import new
 import os
 import csv
-from tabnanny import check 
 
 #function to add data to CSV file. 
 
