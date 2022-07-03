@@ -6,12 +6,11 @@ a name and display the corresponding phone number.
 
 import pickle as pc
 
-def fname():
-    F = open("fname.dat", "rb")
+def test(fname):
     L = input("Enter a name: ")
     try:
-        while F:
-            G = pc.load(F)
+        while fname:
+            G = pc.load(fname)
             #Assuming data is in [Name, Number] format 
             for i in G:
                 if i[0] == L:
@@ -20,4 +19,4 @@ def fname():
                     continue
     except:
         print("File ended")
-    F.close()
+    fname.close()
