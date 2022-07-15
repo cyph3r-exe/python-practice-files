@@ -5,6 +5,15 @@
 #To read a file A.txt and copy only three lettered words to another file, B.txt. Display the content and 
 #size of B.txt
 
+x = "Y"
+
+while x == "Y":
+    sentence = input("Enter a sentence: ")
+    F = open("A.txt", 'a')
+    F.writelines(sentence)
+    F.close()
+    x = input("Do you wish to continue? Y / N?")
+
 def mainframe():
     F = open("A.txt", 'r')
     F1 = open("B.txt", 'a')
@@ -25,4 +34,4 @@ def mainframe():
     print(d)
     print(s)
     
-
+mainframe()
