@@ -16,4 +16,3 @@ def testfun():
         else:
             continue
     F.close()
-
