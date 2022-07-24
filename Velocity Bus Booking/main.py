@@ -299,7 +299,7 @@ def AdminPanelLogin():
     root.title('Admin Login')
     root.geometry("800x500")
 
-    admin_password = Label(root, text="Enter your Password", show="*")
+    admin_password = Label(root, text="Enter your Password")
     admin_password.grid(row=1,column=0)
     admin_password_entry = Entry(root)
     admin_password_entry.grid(row=1, column=1)
@@ -308,8 +308,7 @@ def AdminPanelLogin():
         password = "Hem@ng&cyph3r"
         if admin_password_entry.get() == password:
             adminSelectionPage()
-            
-
+        
     conf_button = Button(root, text="Login as Admin", command=adminPassword)
     conf_button.grid(row=2, column=1)   
 
