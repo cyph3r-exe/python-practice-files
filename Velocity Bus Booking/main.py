@@ -76,8 +76,8 @@ def MainBookingPage():
                 _cCWC = int(cwc)
                 print(cwc)
                 print(type(rdrcwc[1]))
-                #tolSum = (rdrcwc[1])*(ddrbwc[1])*(_cCWC)
-                #print(tolSum)
+                tolSum = ((int(rdrcwc[1]))+(int(ddrbwc[1])))*(_cCWC)
+                print(tolSum)
 
                 ChoiceLabel1 = Label(bw, text="Your choice is as follows: \n")
                 ChoiceLabel1.pack()
@@ -87,8 +87,8 @@ def MainBookingPage():
                 bwBt.pack()
                 no_ofPeople_travelling = Label(bw, text=f"Number of people travelling {_cCWC}")
                 no_ofPeople_travelling.pack()
-                #bwPriceLabel = Label(bw, text=f"Total Price: {tolSum}")
-               # bwPriceLabel.pack()
+                bwPriceLabel = Label(bw, text=f"Total Price: {tolSum}")
+                bwPriceLabel.pack()
 
             confirmButton = Button(root, text="Confirm and Proceed", command=BillWindow)
             confirmButton.pack()
