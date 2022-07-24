@@ -32,8 +32,8 @@ def MainBookingPage():
             welcome_label.pack()
             
             #varaibles
-            x = 1
-            z = 1
+            x = 0
+            z = 0
 
             for i in rdr:
                 loc_label = Label(root, text=f"Location - {i[0]} : Price {i[1]} Choice Number: {x}")
