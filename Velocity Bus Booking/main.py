@@ -9,6 +9,7 @@ import os
 import csv
 from tkinter import *
 from tkinter import messagebox
+from typing_extensions import Self
 
 #MainBookingPageData
 
@@ -361,6 +362,7 @@ def SignInScreen():
                 L = [name_label_entry.get(), secondname_entry.get(), email_entry.get(), username_entry.get(), userpassword_entry.get()]
                 write.writerow(L)
                 MainBookingPage()
+                Tk.destroy(Self)
             else:
                 print("nhk")
                 return
@@ -401,6 +403,7 @@ def FirstScreen():
             for x in read:
                 if x[3] == w and x[4] == t:
                     MainBookingPage()
+                    Tk.destroy(Self)
                     break
                 else:
                     continue       
