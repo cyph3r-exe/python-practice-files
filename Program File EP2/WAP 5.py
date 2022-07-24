@@ -225,18 +225,3 @@ while (ch):
         elif o_ochoice == 2:
             completeDisplay()
             ch = str(input("Do you wish to continue ? Y / N: "))
-
-
-
-
-
-
-        
-        
-        
-
-
-
-
-
-                                        
