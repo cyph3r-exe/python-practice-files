@@ -185,7 +185,7 @@ def adminSelectionPage():
                 newLoc = Tk()
                 newLoc.title('Edit Location')
                 F = open("locationdata.csv", 'r+')
-                F1 = open("temp.csv", "a", newline='')
+                F1 = open("temp.csv", "w", newline='')
                 re = csv.reader(F)
                 wr = csv.writer(F1)
 
@@ -242,7 +242,7 @@ def adminSelectionPage():
                 newBus = Tk()
                 newBus.title('Edit Bus Type')
                 H = open("Bustypedata.csv", 'r+')
-                H1 = open("temp.csv", "a", newline='')
+                H1 = open("temp.csv", "w", newline='')
                 re = csv.reader(H)
                 wr = csv.writer(H1)
 
@@ -285,13 +285,108 @@ def adminSelectionPage():
         modButton1.grid(row=0, column=0)
         modButton2 = Button(mod, text="Modify Bustype", command=modifyBus)
         modButton2.grid(row=0, column=1)
+    
 
+    def deletion():
+        #location deletion
+        def locationdeletion():
+            delloc=Tk()
+            delloc.title('Delete Location')
+            G = open("locationdata.csv", "r")
+            read = csv.reader(G)
 
+            for z in read:
+                locationLabel = Label(delloc, text=f"Location {z[0]} Price {z[1]}")
+                locationLabel.pack()
+            delLocationLabel = Label(delloc, text="Which one do you wish to delete.")
+            delLocationLabel.pack()
+            delLocation = Entry(delloc)
+            delLocation.pack()
+            G.close()
+            def finalLocationdelete():
+                newLoc = Tk()
+                newLoc.title('Delete Location')
+                F = open("locationdata.csv", 'r+')
+                F1 = open("temp.csv", "w", newline='')
+                re = csv.reader(F)
+                wr = csv.writer(F1)
+
+                for x in re:
+                    if x[0] == delLocation.get():
+                        def locationBackendFinal():
+                            messagebox.showinfo("Deleted", "The deletion is successful")
+                            delloc.destroy()
+                            newLoc.destroy()
+                            dell.destroy()
+                            F.close()
+                            F1.close()
+                            os.remove("locationdata.csv")
+                            os.rename("temp.csv", "locationdata.csv")
+                        finalDel = Button(newLoc, text="Confirm Delete", command=locationBackendFinal)
+                        finalDel.grid(row=2, column=1)
+                        continue
+                    else:
+                        F1.writerow(x)
+            dellocButton = Button(delloc, text="Delete", command=finalLocationdelete)
+            dellocButton.pack()
+
+        # delete bus type
+        def busdeletion():
+            delbus=Tk()
+            delbus.title('Delete Bus Type')
+            G = open("Bustypedata.csv", "r")
+            read = csv.reader(G)
+
+            for z in read:
+                busLabel = Label(delbus, text=f"Bustype {z[0]} Price {z[1]}")
+                busLabel.pack()
+
+            delBusLabel = Label(delbus, text="Which one do you wish to delete.")
+            delBusLabel.pack()
+            delBus = Entry(delbus)
+            delBus.pack()
+            G.close()
+            
+            def finalLocationdelete():
+                newLoc = Tk()
+                newLoc.title('Delete Location')
+                F = open("Bustypedata.csv", 'r+')
+                F1 = open("temp.csv", "w", newline='')
+                re = csv.reader(F)
+                wr = csv.writer(F1)
+
+                for x in re:
+                    if x[0] == delBus.get():
+                        def BusTypeBackendFinal():
+                            messagebox.showinfo("Deleted", "The deletion is successful")
+                            delbus.destroy()
+                            newLoc.destroy()
+                            dell.destroy()
+                            F.close()
+                            F1.close()
+                            os.remove("Bustypedata.csv")
+                            os.rename("temp.csv", "Bustypedata.csv")
+                        finalDel = Button(newLoc, text="Confirm Delete", command=BusTypeBackendFinal)
+                        finalDel.grid(row=2, column=1)
+                        continue
+                    else:
+                        F1.writerow(x)
+            dellocButton = Button(delbus, text="Delete", command=finalLocationdelete)
+            dellocButton.pack()
+        dell = Tk()
+        dell.title('Choose Deletion')
+
+        delButton1 = Button(dell, text="Delete Location and Price", command=locationdeletion)
+        delButton1.grid(row=0, column=0)
+        delButton2 = Button(dell, text="Delete Bustype", command=busdeletion)
+        delButton2.grid(row=0, column=1)
+
+                
     additionButton = Button(add, text="Add",width=20, bg="#000000", fg="#ff0000", command=additionSelection)
     additionButton.grid(row=0, column=0)
     modificationButton = Button(add, text="Modify", width=20, bg="#000000", fg="#ff0000", command=modification)
     modificationButton.grid(row=0, column=1)
-    deletionButton = Button(add, text="Delete", width=20, bg="#000000", fg="#ff0000")
+    deletionButton = Button(add, text="Delete", width=20, bg="#000000", fg="#ff0000",command=deletion)
     deletionButton.grid(row=0, column=2)
 
 def AdminPanelLogin():
