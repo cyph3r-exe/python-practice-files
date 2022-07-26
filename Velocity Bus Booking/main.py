@@ -326,7 +326,7 @@ def adminSelectionPage():
                         finalDel.grid(row=2, column=1)
                         continue
                     else:
-                        F1.writerow(x)
+                        wr.writerow(x)
             dellocButton = Button(delloc, text="Delete", command=finalLocationdelete)
             dellocButton.pack()
 
@@ -370,7 +370,7 @@ def adminSelectionPage():
                         finalDel.grid(row=2, column=1)
                         continue
                     else:
-                        F1.writerow(x)
+                        wr.writerow(x)
             dellocButton = Button(delbus, text="Delete", command=finalLocationdelete)
             dellocButton.pack()
         dell = Tk()
