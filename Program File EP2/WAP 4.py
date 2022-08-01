@@ -56,5 +56,3 @@ while (ch):
 # Enter any string you want: The hare was running around the goose. 
 # Do you want to continue ? Y / N: N
 # The sly fox was very sleepy
-
-# The hare was running around the goose.
