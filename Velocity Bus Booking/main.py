@@ -30,11 +30,12 @@ def MainBookingPage():
     for i in read:
         if w == i[3]:
             welcome_label = Label(root, text=f"Welcome {i[0]} {i[1]}", font=("Helvetica", 30, "bold", "italic"), fg="#ffc800", bg="#000000")
-            welcome_label.pack()
+            welcome_label.pack(pady=15)
             
             #varaibles
             x = 0
             z = 0
+            id = i[3]
 
             for i in rdr:
                 loc_label = Label(root, text=f"Location - {i[0]} : Price {i[1]} Choice Number: {x}")
@@ -44,7 +45,7 @@ def MainBookingPage():
             locbookinglabel = Label(root, text="Enter any one choice number: ")
             locbookinglabel.pack()
             bookingchoice = Entry(root)
-            bookingchoice.pack()
+            bookingchoice.pack(pady=10)
             
             for y in ddr:
                 bt_label = Label(root, text=f"Bus Type = {y[0]} : Price  = {y[1]} : Choice Number: {z} ")
@@ -54,12 +55,12 @@ def MainBookingPage():
             btannounce = Label(root, text="Enter any one choice number")
             btannounce.pack()
             bt_entry = Entry(root)
-            bt_entry.pack()
+            bt_entry.pack(pady=10)
 
             travelnum = Label(root, text="Number of people travelling (In Numbericals)" )
             travelnum.pack()
             travelnumEntry = Entry(root)
-            travelnumEntry.pack()
+            travelnumEntry.pack(pady=10)
 
             def BillWindow():
                 bw = Tk()
@@ -70,16 +71,23 @@ def MainBookingPage():
                 awc = bookingchoice.get()
                 _cAWC = int(awc)
                 rdrcwc = (rdr[_cAWC])
+                rrdrcwc = rdrcwc[0]
                 bwc = bt_entry.get()
                 _bWC = int(bwc)
                 ddrbwc = (ddr[_bWC])
+                dddrbwc = ddrbwc[0]
                 cwc = travelnumEntry.get()
                 _cCWC = int(cwc)
-                print(cwc)
-                print(type(rdrcwc[1]))
                 tolSum = ((int(rdrcwc[1]))+(int(ddrbwc[1])))*(_cCWC)
-                print(tolSum)
+                strtolSum = str(tolSum)
 
+                #backend of adding list to booking records
+                oP = open("bookingrecords.csv", 'a', newline='')
+                wrt = csv.writer(oP)
+                bookingList = [id, rrdrcwc, dddrbwc, cwc, strtolSum]
+                wrt.writerow(bookingList)
+
+                #displaying final choices. 
                 ChoiceLabel1 = Label(bw, text="Your choice is as follows: \n")
                 ChoiceLabel1.pack()
                 bwLocationLabel = Label(bw, text=f"Location: {rdrcwc[0]}")
@@ -90,9 +98,38 @@ def MainBookingPage():
                 no_ofPeople_travelling.pack()
                 bwPriceLabel = Label(bw, text=f"Total Price: {tolSum}")
                 bwPriceLabel.pack()
+            
+            def records():
+                j = open("bookingrecords.csv", 'r')
+                jej = csv.reader(j)
+                rt = Tk()
+                rt.title('Previous Records')
+                for i in jej: 
+                    if w == i[0]:
+        
+                        record_frame = Frame(rt, highlightbackground="#FFF9A6")
+                        record_frame.pack(padx = 20, pady= 20)
+
+                        idlabel = Label(record_frame, text=f"Username : {i[0]}")
+                        idlabel.pack(pady=5)
+
+                        reclocation = Label(record_frame, text=f"Destination : {i[1]}")
+                        reclocation.pack(pady=5)
+
+                        recbuschoice = Label(record_frame, text=f"Bus Type: {i[2]}")
+                        recbuschoice.pack(pady=5)
+
+                        recTotalpass = Label(record_frame, text=f"Passengers Travelled : {i[3]}")
+                        recTotalpass.pack(pady=5)
+
+                        recTotalmoni = Label(record_frame, text=f"Total Fare : {i[4]}")
+                        recTotalmoni.pack(pady=5)
 
             confirmButton = Button(root, text="Confirm and Proceed", command=BillWindow)
             confirmButton.pack()
+
+            previousBookings = Button(root, text="Previous Bookings", command=records)
+            previousBookings.pack()
 
 def adminSelectionPage():
     add = Tk()
