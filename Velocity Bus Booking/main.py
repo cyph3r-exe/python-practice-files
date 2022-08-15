@@ -111,7 +111,7 @@ def MainBookingPage():
                         record_frame.pack(padx = 20, pady= 20)
 
                         idlabel = Label(record_frame, text=f"Username : {i[0]}")
-                        idlabel.pack(pady=5)
+                        idlabel.pack(pady=5) 
 
                         reclocation = Label(record_frame, text=f"Destination : {i[1]}")
                         reclocation.pack(pady=5)

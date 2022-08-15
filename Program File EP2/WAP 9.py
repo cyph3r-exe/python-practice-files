@@ -2,36 +2,31 @@
 # XII - B 
 # 40
 
-#To read a file A.txt and copy only three lettered words to another file, B.txt. Display the content and 
-#size of B.txt
+#Arjun is working on a list of numbers. Out of the numbers, he wants to store only 
+#prime number to the stack. Help him form the stack and then display all elements of 
+#the stack. If the stack is empty, display the message "over"
 
+stack = []
+varStack = []
 x = "Y"
 
 while x == "Y":
-    sentence = input("Enter a sentence: ")
-    F = open("A.txt", 'a')
-    F.writelines(sentence)
-    F.close()
+    askforNum = int(input("Enter a number: "))
+    varStack.append(askforNum)
     x = input("Do you wish to continue? Y / N?")
 
-def mainframe():
-    F = open("A.txt", 'r')
-    F1 = open("B.txt", 'a')
-    A = F.readlines()
-    for i in A:
-        x = i.split()
-        for y in x:
-            if len(y) == 3:
-                print(y)
-                F1.write(i, F1)
-            else:
-                continue
-    F1.close()
-    F.close()
-    B = open("B.txt", 'r')
-    d = B.readlines()
-    s = B.tell()
-    print(d)
-    print(s)
-    
-mainframe()
+def primeCheck(L):
+    for i in L:
+        if i % 2 == 0 or i%3 == 0 or i%5 == 0 or i%7 == 0:
+            continue
+        else:
+            stack.append(i)
+
+def display():
+    for i in reversed(stack):
+        print(i)
+        stack.pop()
+    print("over")
+
+primeCheck(varStack)
+display() 
