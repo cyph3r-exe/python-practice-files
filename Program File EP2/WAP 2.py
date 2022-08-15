@@ -1,15 +1,12 @@
 #Debangshu  Roy 
 # XII - B 
 # 40
-
 #Write a program to count the number of vowels in a text file named 
 #Myfile.txt. 
-
 def enterData(Data):
     F = open("MyFile.txt", 'a+')
     F.writelines(Data)
     F.close()
-
 def readData():
     F = open("MyFile.txt", 'r+')
     count = 0
@@ -24,7 +21,6 @@ def readData():
                     continue
     except:
         print("End of File")
- 
 choice = "Y"
 while (choice):
     x = input("Enter the string of your choice: ")
@@ -35,8 +31,3 @@ while (choice):
     else:
         readData()
         break
-
-
-            
-
-

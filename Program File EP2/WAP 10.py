@@ -33,11 +33,3 @@ while (x):
 #prints all the names taken from the dictionary
 for i in queue:
     print(i)
-    
-
-
-
-
-
-
-    
