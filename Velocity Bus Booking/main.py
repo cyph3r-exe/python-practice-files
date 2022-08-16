@@ -473,12 +473,12 @@ def SignInScreen():
     username_entry = Entry(root)
     username_entry.grid(row=3, column=1)
 
-    userpassword = Label(root, text="Enter your password: ", show="*")
+    userpassword = Label(root, text="Enter your password: ")
     userpassword.grid(row=4, column=0)
     userpassword_entry = Entry(root)
     userpassword_entry.grid(row=4, column=1)
 
-    passwordconf = Label(root, text="Confirm your password: ",show="*")
+    passwordconf = Label(root, text="Confirm your password: ")
     passwordconf.grid(row=5, column=0)
     passwordconf_entry = Entry(root)
     passwordconf_entry.grid(row=5, column=1)
