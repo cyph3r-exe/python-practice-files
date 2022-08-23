@@ -209,3 +209,4 @@ def deletedata():
     os.remove("empdata.dat")
     os.rename("temp.dat", "empdata.dat")
 
+mainmenu()
