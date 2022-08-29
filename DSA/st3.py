@@ -111,11 +111,11 @@ def modify():
     def editName():
         askname = input("Enter employee Name: ")
         for i in totaldd:
-            if i[0] != askname:
+            if i[1] != askname:
                 pickle.dump(i, F1)
             else:
                 newname = input("Enter New Name: ")
-                i[0] = newname
+                i[1] = newname
                 pickle.dump(i, F1)
                 print("Sucessfully Edited. Returning to main menu")
         F.close()
@@ -127,11 +127,11 @@ def modify():
     def editphone():
         askphone = input("Enter employee phone: ")
         for i in totaldd:
-            if i[0] != askphone:
+            if i[2] != askphone:
                 pickle.dump(i, F1)
             else:
                 newphone = input("Enter New Phone: ")
-                i[0] = newphone
+                i[2] = newphone
                 pickle.dump(i, F1)
                 print("Sucessfully Edited. Returning to main menu")
         F.close()
@@ -143,11 +143,11 @@ def modify():
     def editwork():
         askwork = input("Enter employee Work Title: ")
         for i in totaldd:
-            if i[0] != askwork:
+            if i[3] != askwork:
                 pickle.dump(i, F1)
             else:
                 newwork = input("Enter New Work Title: ")
-                i[0] = newwork
+                i[3] = newwork
                 pickle.dump(i, F1)
                 print("Sucessfully Edited. Returning to main menu")
         F.close()
@@ -159,11 +159,11 @@ def modify():
     def editSalary():
         asksalary = input("Enter employee salary: ")
         for i in totaldd:
-            if i[0] != asksalary:
+            if i[4] != asksalary:
                 pickle.dump(i, F1)
             else:
                 newsalary = input("Enter New salary: ")
-                i[0] = newsalary
+                i[4] = newsalary
                 pickle.dump(i, F1)
                 print("Sucessfully Edited. Returning to main menu")
         F.close()
