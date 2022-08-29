@@ -11,22 +11,18 @@ def insertData(Data):
     F.writelines(Data)
     F.close()
 
+num = 0 
 def finalDataReading():
     F = open("Three.txt", 'r+')
     x = F.readlines()
-    num = 0 
-    try: 
-        while (F):
-            for i in x:
-                y = i.split()
-                for g in y:
-                    if len(g) == 3:
-                        num += 1
-                        print(g)
-                    else:
-                        continue
-    except:
-        print("End of File")
+    global num
+    for i in x:
+        y = i.split()
+        for g in y:
+            if len(g) == 3:
+                num += 1
+            else:
+                continue
 
 choice = "Y"
 while (choice):
@@ -37,4 +33,7 @@ while (choice):
         continue
     else:
         finalDataReading()
+        print(f"Number of three lettered words: {num}")
         break
+
+#TEST OUTPUTS 
