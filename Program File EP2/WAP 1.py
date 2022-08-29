@@ -32,3 +32,15 @@ while (ch):
             continue
         else:
             break  
+
+#TEST OUTPUT 
+#Enter the principle amount: 10000
+#Enter Rate: 2
+#Enter time (in years): 4
+#Your simple interest is: 800.0
+#Program ended. Would you like to continue? Y / N: Y
+#Enter the principle amount: 100000
+#Enter Rate: 3
+#Enter time (in years): 3
+#Your simple interest is: 9000.0
+#Program ended. Would you like to continue? Y / N: 
