@@ -36,4 +36,9 @@ while (choice):
         print(f"Number of three lettered words: {num}")
         break
 
-#TEST OUTPUTS 
+"""
+TEST OUTPUT
+Enter the string of your choice: mer mera man aaj jane ki zid na karein pls please mat crow karo
+Do you want to continue? Y / NN
+Number of three lettered words: 6
+"""
