@@ -79,8 +79,6 @@ def modDestinationData(iD, new_data):
         os.remove("Database.dat")
         os.rename("temp.dat", "Database.dat")
 
-
-
 def modDateofJourneyData(iD, new_data):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
