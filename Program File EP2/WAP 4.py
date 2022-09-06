@@ -14,18 +14,13 @@ def addData(br):
 #function to display all the required data given in the question 
 def displayData():
     F = open("hello.txt", 'r+')
-    try:
-        while (F):
-            y = F.readlines()
-            for i in y:
-                j = i.split() #getting words separated
-                for h in j:
-                    if h == 'The': #checking for equivalency
-                        print(i)
-                    else: 
-                        break
-    except:
-        print("End of file")
+    y = F.readlines()
+    for i in y:
+        j = i.split() #getting words separated
+        if j[0] == 'The' or j[0] == 'THE':
+            print(i)
+        else:
+            continue   
     F.close()
 
 #menu 
@@ -43,16 +38,17 @@ while (ch):
             displayData()
             break
 
-#output displayed (from command prompt)
-
-#Choose what you want to do: 
-# 1 -> Add data to file.
-# 2 -> Display final output.1
-# Enter any string you want: The sly fox was very sleepy
-# Do you want to continue ? Y / N: Y
-# Choose what you want to do: 
-#  1 -> Add data to file.
-#  2 -> Display final output.1
-# Enter any string you want: The hare was running around the goose. 
-# Do you want to continue ? Y / N: N
-# The sly fox was very sleepy
+"""
+TEST OUTPUT
+Choose what you want to do: 
+1 -> Add data to file.
+2 -> Display final output.1
+Enter any string you want: The sly fox was very sleepy
+Do you want to continue ? Y / N: Y
+Choose what you want to do: 
+1 -> Add data to file.
+2 -> Display final output.1
+Enter any string you want: The hare was running around the goose. 
+Do you want to continue ? Y / N: N
+The sly fox was very sleepy
+"""
