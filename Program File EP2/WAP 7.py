@@ -10,20 +10,21 @@
 #Date of testing str 2
 #rtpcr result str 3
 
+from hashlib import new
 import os
 import csv
 
 #function to add data to CSV file. 
 
 def addData(data):
-    F = open("Database.csv", 'r')
+    F = open("Database.csv", 'a', newline='')
     pointer = csv.writer(F)
     pointer.writerow(data)
     F.close()
 
 def deleteData(iD):
     F = open("Database.csv", 'r')
-    F1 = open("temp.csv", 'a')
+    F1 = open("temp.csv", 'a', newline='')
     reader = csv.reader(F)
     writer = csv.writer(F1)
     for i in reader:
@@ -31,26 +32,31 @@ def deleteData(iD):
             continue
         else:
             writer.writerow(i)
-    os.remove(F)
-    os.rename("Database.csv", "temp.csv")
+    F.close()
+    F1.close()
+    os.remove('Database.csv')
+    os.rename("temp.csv", "Database.csv")
 
 def modPatientName(iD, newName):
     F = open("Database.csv", 'r')
-    F1 = open("temp.csv", 'w')
+    F1 = open("temp.csv", 'w', newline='')
     reader = csv.reader(F)
     writer = csv.writer(F1)
     for i in reader:
-        if i[0] == iD:
-            i[1] == newName
-            writer.writerow(i)
-        else:
-            writer.writerow(i)
-    os.remove(F)
+        for j in i:
+            if j[0] == iD:
+                j[1] == newName
+                writer.writerow(i)
+            else:
+                writer.writerow(i)
+    F.close()
+    F1.close()
+    os.remove('Database.csv')
     os.rename("temp.csv", "Database.csv")
 
 def modDateofTesting(iD, newDOT):
     F = open("Database.csv", 'r')
-    F1 = open("temp.csv", 'w')
+    F1 = open("temp.csv", 'w', newline='')
     reader = csv.reader(F)
     writer = csv.writer(F1)
     for i in reader:
@@ -59,12 +65,14 @@ def modDateofTesting(iD, newDOT):
             writer.writerow(i)
         else:
             writer.writerow(i)
-    os.remove(F)
+    F.close()
+    F1.close()
+    os.remove('Database.csv')
     os.rename("temp.csv", "Database.csv")
 
 def modResultPOStoNEG(iD):
     F = open("Database.csv", 'r')
-    F1 = open("temp.csv", 'w')
+    F1 = open("temp.csv", 'w', newline='')
     reader = csv.reader(F)
     writer = csv.writer(F1)
     for i in reader:
@@ -73,12 +81,14 @@ def modResultPOStoNEG(iD):
             writer.writerow(i)
         else:
             writer.writerow(i)
-    os.remove(F)
+    F.close()
+    F1.close()
+    os.remove('Database.csv')
     os.rename("temp.csv", "Database.csv")
     
 def modResultNEGtoPOS(iD):
     F = open("Database.csv", 'r')
-    F1 = open("temp.csv", 'w')
+    F1 = open("temp.csv", 'w', newline='')
     reader = csv.reader(F)
     writer = csv.writer(F1)
     for i in reader:
@@ -87,9 +97,32 @@ def modResultNEGtoPOS(iD):
             writer.writerow(i)
         else:
             writer.writerow(i)
-    os.remove(F)
+    F.close()
+    F1.close()
+    os.remove('Database.csv')
     os.rename("temp.csv", "Database.csv")
 
+def seldisplay(name):
+    F = open("Database.csv", 'r')
+    p = csv.reader(F)
+    for i in p:
+        if i[1] == name:
+            print(i)
+        else:
+            continue
+    print("Patient Name not found.")
+    F.close()
+
+def comdisplay():
+    F = open('Database.csv', 'r')
+    p = csv.reader(F)
+    for i in p: 
+        print(f"Patient ID : {i[0]}")
+        print(f"Patient Name : {i[1]}")
+        print(f"Patient Test Date : {i[2]}")
+        print(f"Patient Test Result {i[3]}")
+        print()
+    F.close()
 x = "Y"
 Pid = 0
 while (x):
@@ -148,6 +181,29 @@ while (x):
                 modResultPOStoNEG(checkId)
             else:
                 modResultNEGtoPOS(checkId)
-            
+
+    elif choice1== 4:
+        uName = input("Enter name of person: ")
+        seldisplay(uName)
+
+
+    elif choice1 == 5:
+        comdisplay()
+
     elif choice1 == 6:
         os._exit()
+
+"""
+Welcome to Corona Database. Please choose an action of your choice.
+1) Add Data to the Database
+2) Delete a record from the database
+3) Modify Particulars of a record.
+4) Display Particular record
+5) Display All recards
+6) Exit
+Choose your choice: 5
+Patient ID : 1
+Patient Name : Debangshu Roy
+Patient Test Date : 27092022
+Patient Test Result +
+"""

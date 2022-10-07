@@ -21,149 +21,114 @@ def addData(data):
 def deleteData(iD):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] != iD:
-                    pickle.dump(i, F1)
-                else:
-                    continue
-    except EOFError:
-        print("File Completed")
-    
-    finally:
-        os.remove("Database.dat")
-        os.rename("temp.dat", "Database.dat")
+    a = pickle.load(F)
+    for i in a:
+        if i[0] != iD:
+            pickle.dump(i, F1)
+        else:
+            continue
+    os.remove("Database.dat")
+    os.rename("temp.dat", "Database.dat")
 
 def modArrivalData(iD, new_data):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] == iD:
-                    i[1] = new_data
-                    pickle.dump(i, F1)
-                else:
-                    pickle.dump(i, F1)
-                    continue
-        
-    except EOFError:
-        print("End of File. ")
 
-    finally:
-        os.remove("Database.dat")
-        os.rename("temp.dat", "Database.dat")
- 
+    a = pickle.load(F)
+    for i in a:
+        if i[0] == iD:
+            i[1] = new_data
+            pickle.dump(i, F1)
+        else:
+            pickle.dump(i, F1)
+            continue
+    os.remove("Database.dat")
+    os.rename("temp.dat", "Database.dat")
 
 def modDestinationData(iD, new_data):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] == iD:
-                    i[2] = new_data
-                    pickle.dump(i, F1)
-                else:
-                    pickle.dump(i, F1)
-                    continue
-        
-    except EOFError:
-        print("End of File. ")
-
-    finally:
-        os.remove("Database.dat")
-        os.rename("temp.dat", "Database.dat")
+    a = pickle.load(F)
+    for i in a:
+        if i[0] == iD:
+            i[2] = new_data
+            pickle.dump(i, F1)
+        else:
+            pickle.dump(i, F1)
+            continue
+    os.remove("Database.dat")
+    os.rename("temp.dat", "Database.dat")
 
 def modDateofJourneyData(iD, new_data):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] == iD:
-                    i[3] = new_data
-                    pickle.dump(i, F1)
-                else:
-                    pickle.dump(i, F1)
-                    continue
-        
-    except EOFError:
-        print("End of File. ")
+    a = pickle.load(F)
+    for i in a:
+        if i[0] == iD:
+            i[3] = new_data
+            pickle.dump(i, F1)
+        else:
+            pickle.dump(i, F1)
+            continue
 
-    finally:
-        os.remove("Database.dat")
-        os.rename("temp.dat", "Database.dat")
+    os.remove("Database.dat")
+    os.rename("temp.dat", "Database.dat")
 
 def modFare(iD, new_data):
     F = open("Database.dat", 'rb')
     F1 = open("temp.dat", 'wb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] == iD:
-                    i[4] = new_data
-                    pickle.dump(i, F1)
-                else:
-                    pickle.dump(i, F1)
-                    continue
-        
-    except EOFError:
-        print("End of File. ")
 
-    finally:
-        os.remove("Database.dat")
-        os.rename("temp.dat", "Database.dat")
+    a = pickle.load(F)
+    for i in a:
+        if i[0] == iD:
+            i[4] = new_data
+            pickle.dump(i, F1)
+        else:
+            pickle.dump(i, F1)
+            continue
+    os.remove("Database.dat")
+    os.rename("temp.dat", "Database.dat")
 
 def selectiveDataDisplay (iD):
     F = open("Database.dat", 'rb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                if i[0] == iD:
-                    print("Your Booking details are as follows.")
-                    print(f"Arrival - {i[1]}")
-                    print(f"Destination - {i[2]}")
-                    print(f"Date of Journey - {i[3]}")
-                    print(f"Fare - {i[4]}")
-                else:
-                    print("Given ID was not found please try again.")
-    except:
-        print("End of File. ")
+
+    a = pickle.load(F)
+    for i in a:
+        if i[0] == iD:
+            print("Your Booking details are as follows.")
+            print(f"Arrival - {i[1]}")
+            print(f"Destination - {i[2]}")
+            print(f"Date of Journey - {i[3]}")
+            print(f"Fare - {i[4]}")
+        else:
+            print("Given ID was not found please try again.")
     F.close()
 
 def completeDisplay():
     F = open("Database.dat", 'rb')
-    try:
-        while (F):
-            a = pickle.load(F)
-            for i in a:
-                print(f"Booking ID - {i[0]}")
-                print(f"Arrival - {i[1]}")
-                print(f"Destination - {i[2]}")
-                print(f"Date of Journey - {i[3]}")
-                print(f"Fare - {i[4]}")
-                print()
-                print("---------------------------------")
-                print()
-    except:
-        print("End of File.")
+    a = pickle.load(F)
+    for i in a:
+        c = str(i[0])
+        d = str(i[1])
+        e = str(i[2])
+        f = str(i[3])
+        h = str(i[4])
+        print(f"Booking ID - {c}")
+        print(f"Arrival - {d}")
+        print(f"Destination - {e}")
+        print(f"Date of Journey - {f}")
+        print(f"Fare - {h}")
+        print()
+        print("---------------------------------")
+        print()
     F.close()
-
 
 bID = 0 
 ch = "y"
 while (ch):
     print("Welcome to Plane")
     print("Please select what you want to do: ")
-    print("1) Add Data to Database \n 2) Delete data from Database. \n 3) Selectively Modify data in a database. ")
+    print("1) Add Data to Database \n2) Delete data from Database. \n3) Selectively Modify data in a database. ")
     print("4) Display Selective or complete data from a databse ")
     first_ch = int(input("Enter your choice: "))   
 
@@ -185,6 +150,12 @@ while (ch):
         ch = str(input("Do you wish to continue ? Y / N: "))
 
     elif first_ch == 2:
+        g = input("Enter the your numerical ID you want to delete: ")
+        deleteData(g)
+        print("Operation completed successfully")
+        ch = str(input("Do you wish to continue ? Y / N: "))
+
+    elif first_ch == 3:
         ch_bID = int(input("Enter your Booking ID: "))
         print("What do you want to edit: \n 1) Arrival Location Code \n 2) Dstination Location Code ")
         print("3) Date of Journey \n 4) Fare ")
@@ -213,7 +184,7 @@ while (ch):
 
             print("Operation completed successfully")
             ch = str(input("Do you wish to continue ? Y / N: "))
-    elif first_ch == 3:
+    elif first_ch == 4:
         print("Do you want to view \n 1) Selective Data \n 2) Complete Data")
         o_ochoice = int(input("Enter your choice: "))
         if o_ochoice == 1:
@@ -223,3 +194,8 @@ while (ch):
         elif o_ochoice == 2:
             completeDisplay()
             ch = str(input("Do you wish to continue ? Y / N: "))
+
+"""
+TEST OUTPUT
+
+"""

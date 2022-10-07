@@ -30,3 +30,26 @@ def display():
 
 primeCheck(varStack)
 display() 
+
+"""
+TEST OUTPUT
+Enter a number: 13
+Do you wish to continue? Y / N?Y
+Enter a number: 90
+Do you wish to continue? Y / N?Y
+Enter a number: 57
+Do you wish to continue? Y / N?Y
+Enter a number: 43
+Do you wish to continue? Y / N?Y
+Enter a number: 8
+Do you wish to continue? Y / N?Y
+Enter a number: 7
+Do you wish to continue? Y / N?Y
+Enter a number: 17
+Do you wish to continue? Y / N?Y
+Enter a number: 2
+Do you wish to continue? Y / N?N
+17
+43
+13
+"""

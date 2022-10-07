@@ -35,3 +35,9 @@ def mainframe():
     print(s)
     
 mainframe()
+
+"""
+Enter a sentence: aaj jaan ni jaan menu dena photo de kone de ch 
+Do you wish to continue? Y / N?N
+aaj
+"""

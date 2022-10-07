@@ -25,7 +25,7 @@ while (x):
     main(firDict)
     #continuation call 
     x = input("Do you want to continue? Y / N")
-    if x == "y": 
+    if x == "y" or x == "Y": 
         continue
     else:
         break
@@ -33,3 +33,17 @@ while (x):
 #prints all the names taken from the dictionary
 for i in queue:
     print(i)
+
+
+"""
+TEST OUTPUT
+
+Enter Name: Debangshu 
+Enter Date of Birth: 070604
+Do you want to continue? Y / Ny
+Enter Name: Devangh
+Enter Date of Birth: 050805
+Do you want to continue? Y / Nn
+Debangshu
+Devangh
+"""

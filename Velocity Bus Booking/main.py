@@ -10,7 +10,6 @@ import csv
 from tkinter import *
 from tkinter import messagebox
 
-
 #MainBookingPageData
 
 def MainBookingPage():
@@ -36,7 +35,7 @@ def MainBookingPage():
             x = 0
             z = 0
             id = i[3]
-
+        
             for i in rdr:
                 loc_label = Label(root, text=f"Location - {i[0]} : Price {i[1]} Choice Number: {x}")
                 loc_label.pack()
