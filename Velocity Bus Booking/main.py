@@ -502,6 +502,17 @@ def SignInScreen():
 
 #command=addtodata(user_name, user_password_entry)
 
+def AboutusScreen():
+    abs = Tk()
+    abs.title('About VBB')
+    abs.geometry("800x500")
+
+    aboutustext = Label(abs, text="About Us", font=("Helvetica", 30, "italic"), fg="#ffc800", bg="#000000")
+    aboutustext.pack()
+
+    defineabout = Label(abs, text="Stuck where to contact for a bus?\n Can't go to holidays with family because of logistics issues?\n We are your solution. \n Providing quality buses at affordable prices \n Plan your perfect holiday trip with us.\n Travel hassle free with Velocity \nContact us at bizwithcyph3r@gmail.com", font=("Helvetica", 20, "italic"), fg="#ffc800")
+    defineabout.pack()
+
 def FirstScreen():
     main = Tk()
     main.title('VBB Home')
@@ -566,6 +577,9 @@ def FirstScreen():
 
     CustomerSignInButton = Button(buttons_frame, text="Customer Sign-Up", command=SignInScreen)
     CustomerSignInButton.grid(row=0, column=2, padx=20)
+
+    AboutusButton = Button(buttons_frame, text="About Us", command=AboutusScreen)
+    AboutusButton.grid(row=0, column=3, padx=20)
 
     #running 
     main.mainloop()
