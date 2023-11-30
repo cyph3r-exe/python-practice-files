@@ -1,6 +1,5 @@
 #Debangshu Roy and Hemang Vats 
-#Velocity bus booking (Front end [GUI]). Refer to X link 
-#for discord interface and commands. 
+#Velocity bus booking (Front end [GUI]).
 #The Database is centralised and the whole app is based oon the idea 
 #of being decentralised and transparent
 
@@ -491,7 +490,7 @@ def SignInScreen():
                 write = csv.writer(F)
                 L = [name_label_entry.get(), secondname_entry.get(), email_entry.get(), username_entry.get(), userpassword_entry.get()]
                 write.writerow(L)
-                MainBookingPage()
+                FirstScreen()
                 Tk.destroy()
             else:
                 print("nhk")

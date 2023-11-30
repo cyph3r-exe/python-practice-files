@@ -1,0 +1,7 @@
+a = ("banana", "grapes", "apple", "orange")
+b = list(a)
+print(b)
+c = str(input("Enter something: "))
+b.append(c)
+d = tuple(b)
+print(d)
