@@ -12,3 +12,4 @@ image = pipe(
     guidance_scale=7.0,
 ).images[0]
 image.save("diffused_image.png")
+
